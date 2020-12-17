@@ -7,4 +7,12 @@
     <select id="findAll" resultType="com.yuxiong.tech.logincomponent.entity.User">
         select * from user
     </select>
+
+    <select id="findById" parameterType="Long" resultType="com.yuxiong.tech.logincomponent.entity.User">
+        select * from user where user.id= #{id}
+    </select>
+
+    <select id="findByUsername" parameterType="String" resultType="com.yuxiong.tech.logincomponent.entity.User">
+        select * from user where user.username= #{username}
+    </select>
 </mapper>

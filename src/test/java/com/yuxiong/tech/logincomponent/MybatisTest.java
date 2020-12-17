@@ -27,8 +27,8 @@ public class MybatisTest {
         UserMapper userMapper = session.getMapper(UserMapper.class);
 
         // 5、使用代理对象执行方法
-        List<User> users = userMapper.findAll();
-        System.out.println(Arrays.toString(users.toArray()));
+        User user = userMapper.findById(1L);
+        System.out.println(user);
 
         // 6、释放资源
         session.close();
