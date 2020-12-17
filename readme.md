@@ -1,6 +1,6 @@
 #登录组件
 
-使用 Springboot + SpringMVC + Mybatis 架构 
+使用 Springboot + SpringMVC + Mybatis 架构 + Spring Security
 
 SpringBoot 自动配置 Spring 注解
 
@@ -11,4 +11,6 @@ Mybatis 为 ORM（Object Relational Mapping）框架，开发者可集中设计 
 Mybatis 配置信息在 application.properties
 
 映射文件夹路径：`src/main/resources/com/yuxiong/tech/logincomponent/dao`
+
+Log4j：日志输出工具
 
