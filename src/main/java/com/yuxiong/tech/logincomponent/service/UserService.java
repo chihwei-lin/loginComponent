@@ -5,7 +5,6 @@ import com.yuxiong.tech.logincomponent.entity.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.io.IOException;
 import java.util.List;
 
 @Service("userService")
@@ -48,5 +47,12 @@ public class UserService {
             System.out.println(e.toString());
         }
         return user;
+    }
+
+    public int login(String username, String password) {
+        User user = userMapper.findByUsername(username);
+        if(user == null)
+            return 201;
+        return 200;
     }
 }
