@@ -2,7 +2,6 @@ package com.yuxiong.tech.logincomponent.service;
 
 import com.yuxiong.tech.logincomponent.dao.UserMapper;
 import com.yuxiong.tech.logincomponent.entity.User;
-import com.yuxiong.tech.logincomponent.util.Database;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -18,7 +17,6 @@ public class UserService {
     public List<User> findAll() {
         List<User> users = null;
 
-        Database db = new Database();
         try {
             users = userMapper.findAll();
         } catch (Exception e) {
@@ -31,9 +29,8 @@ public class UserService {
     public User findById(Long id) {
         User user = null;
 
-        Database db = new Database();
         try {
-            user = db.findUserById(id);
+            user = userMapper.findById(id);
         } catch (Exception e) {
             System.out.println("Failed to get user");
             System.out.println(e.toString());
@@ -44,9 +41,8 @@ public class UserService {
     public User findByUsername(String username) {
         User user = null;
 
-        Database db = new Database();
         try {
-            user = db.findUserByUsername(username);
+            user = userMapper.findByUsername(username);
         } catch (Exception e) {
             System.out.println("Failed to get user");
             System.out.println(e.toString());
